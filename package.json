@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/DigITall/",
-    "preview": "vite preview"
+    "build": "vite build --base=/Vyshyvanka-Project/",
+    "preview": "vite preview",
+    "push": "git add . && git commit -m 'update' && git push"
   },
   "devDependencies": {
     "vite": "^4.0.5",
