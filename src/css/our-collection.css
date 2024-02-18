@@ -340,6 +340,7 @@ screen and (min-device-pixel-ratio: 3) {
         animation: 1500ms linear running rotation-trick;
     }
 
+    /* 
     @keyframes rotation-trick {
         0% {
             transform: rotate(330deg);
@@ -360,8 +361,7 @@ screen and (min-device-pixel-ratio: 3) {
         100% {
             transform: rotate(0deg) translateX(30px);
         }
-    }
-
+    } */
     /* ====== End ====== */
 }
 
