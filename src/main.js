@@ -147,4 +147,4 @@
 //     closeLightbox();
 //   }
 // });
-import * as ourCollection from './js/our-collection';
+import * as ourCollection from './partials/js/our-collection';
