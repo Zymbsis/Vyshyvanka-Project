@@ -142,7 +142,6 @@ screen and (min-device-pixel-ratio: 3) {
     }
 
     /* ====== Lightbox Image preview ====== */
-
     #lightbox-container {
         display: block;
         pointer-events: none;
@@ -451,5 +450,186 @@ screen and (min-device-pixel-ratio: 3) {
     .lightbox-item-price {
         margin-bottom: 45px;
         font-size: 32px;
+    }
+}
+
+/* ******************************************************************************************** */
+/* ******************************************************************************************** */
+.lightbox-container {
+    position: relative;
+    width: 80vw;
+    height: 90vh;
+    padding: 10px;
+    background-color: #1c2225;
+    background-image:
+        url(../img/mobile/Collection/collection-elements-mob1x.png),
+        url(../img/tablet/Order/order-elements-tab1x.png);
+    background-size:
+        57px 150px,
+        81px 121px;
+    background-position:
+        left 0 top 20px,
+        right -20px bottom 15%;
+    background-repeat: no-repeat;
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 144dpi),
+(min-resolution: 2dppx) {
+    .lightbox-container {
+        background-image: url(../img/mobile/Collection/collection-elements-mob2x.png), url(../img/tablet/Order/order-elements-tab2x.png);
+        ;
+    }
+}
+
+@media (min-device-pixel-ratio: 3),
+(min-resolution: 216dpi),
+(min-resolution: 3dppx) {
+    .lightbox-container {
+        background-image: url(../img/mobile/Collection/collection-elements-mob3x.png), url(../img/tablet/Order/order-elements-tab3x.png);
+        ;
+    }
+}
+
+.lightbox-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    transition: transform 250ms ease-in;
+}
+
+.lightbox-close-button:hover {
+    transform: scale(0.9);
+}
+
+.lightbox-close-icon {
+    width: 100%;
+    height: 100%;
+    stroke: #ECD979;
+}
+
+.lightbox-img-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.lightbox-img {
+    width: 220px;
+}
+
+.lightbox-img img {
+    margin-bottom: 0;
+}
+
+.lightbox-size-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 5px;
+    padding-bottom: 20px;
+}
+
+.lightbox-size-item {
+    width: 25px;
+    height: 25px;
+    font-size: 8px;
+    font-weight: 500;
+    background-color: #ecd979;
+    border-radius: 50%;
+    color: #1c2225;
+    cursor: pointer;
+    transition: transform 500ms ease-in, border 500ms ease-in, background-color 500ms ease-in, color 500ms ease-in;
+}
+
+.lightbox-size-text {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-size-item:hover {
+    transform: scale(1.1);
+    border: 1px solid #ecd979;
+    background-color: #1c2225;
+    color: #ecd979;
+}
+
+.lightbox-hand-made {
+    display: none;
+}
+
+.lightbox-desc-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.lightbox-desc-title {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.lightbox-desc-text {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.33;
+}
+
+.lightbox-desc-price {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #ECD979;
+}
+
+.lightbox-order-link {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border: 1px solid rgba(252, 249, 249, .1);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.lightbox-order-icon {
+    fill: #ecd979;
+    transform: rotate(-30deg);
+}
+
+.lightbox-order-link:hover .lightbox-order-icon {
+    animation: 1500ms linear running rotation-trick;
+}
+
+@keyframes rotation-trick {
+    0% {
+        transform: rotate(330deg);
+    }
+
+    33% {
+        transform: rotate(220deg);
+    }
+
+    66% {
+        transform: rotate(110deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg) translateX(30px);
     }
 }
