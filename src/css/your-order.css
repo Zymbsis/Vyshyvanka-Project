@@ -137,10 +137,13 @@
     }
 }
 
-.order-img {
+.order-picture {
     display: none;
 }
 
+/* .order-img {
+    display: none;
+} */
 @media screen and (min-width: 768px) {
     .order-section {
         background-image: url(../img/tablet/Order/order-girlingreen-tab1x.jpg), url(../img/tablet/Order/order-elements-tab1x.png);
@@ -187,8 +190,12 @@
         margin-left: 0;
     }
 
-    .order-img {
+    .order-picture {
         display: block;
+    }
+
+    .order-img {
+        /* display: block; */
         margin-left: auto;
     }
 }
