@@ -26,8 +26,7 @@ function createLightboxInstance(e) {
     <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="./img/icons.svg#menu-close">
     </use><svg></button>
     <div class="lightbox-img-wrapper">
-    <picture class="lightbox-img" ${e.target.parentNode.innerHTML}
-    </picture>
+
     <ul class="lightbox-size-list">
     ${markupLightboxSizeChart([
       'XXS',
@@ -79,3 +78,6 @@ mainContainer.addEventListener('click', e => {
   createLightboxInstance(e).show();
   console.log(document.querySelector('.lightbox-size-list'));
 });
+
+// <picture class="lightbox-img" ${e.target.parentNode.innerHTML}
+// </picture></picture>
