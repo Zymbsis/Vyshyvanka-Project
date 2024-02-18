@@ -5,7 +5,7 @@
 	`)),b=a.querySelector(".basicLightbox__placeholder");e.forEach(function(E){return b.appendChild(E)});var y=l(b,"IMG"),L=l(b,"VIDEO"),w=l(b,"IFRAME");return y===!0&&a.classList.add("basicLightbox--img"),L===!0&&a.classList.add("basicLightbox--video"),w===!0&&a.classList.add("basicLightbox--iframe"),a}(i=function(e){var c=typeof e=="string",a=e instanceof HTMLElement==1;if(c===!1&&a===!1)throw new Error("Content must be a DOM element/node or string");return c===!0?Array.from(r(e,!0)):e.tagName==="TEMPLATE"?[e.content.cloneNode(!0)]:Array.from(e.children)}(i),o=function(){var e=arguments.length>0&&arguments[0]!==void 0?arguments[0]:{};if((e=Object.assign({},e)).closable==null&&(e.closable=!0),e.className==null&&(e.className=""),e.onShow==null&&(e.onShow=function(){}),e.onClose==null&&(e.onClose=function(){}),typeof e.closable!="boolean")throw new Error("Property `closable` must be a boolean");if(typeof e.className!="string")throw new Error("Property `className` must be a string");if(typeof e.onShow!="function")throw new Error("Property `onShow` must be a function");if(typeof e.onClose!="function")throw new Error("Property `onClose` must be a function");return e}(o)),m=function(e){return o.onClose(f)!==!1&&function(c,a){return c.classList.remove("basicLightbox--visible"),setTimeout(function(){return g(c)===!1||c.parentElement.removeChild(c),a()},410),!0}(s,function(){if(typeof e=="function")return e(f)})};o.closable===!0&&s.addEventListener("click",function(e){e.target===s&&m()});var f={element:function(){return s},visible:function(){return g(s)},show:function(e){return o.onShow(f)!==!1&&function(c,a){return document.body.appendChild(c),setTimeout(function(){requestAnimationFrame(function(){return c.classList.add("basicLightbox--visible"),a()})},10),!0}(s,function(){if(typeof e=="function")return e(f)})},close:m};return f}},{}]},{},[1])(1)})})(N);const C=document.querySelector(".collection-list");function S(n){return n.map(u=>`<li class="lightbox-size-item">
         <span class="lightbox-size-text">${u}</span>
       </li>`).join("")}function v(n,u){return u.target.parentNode.parentNode.querySelector(n).textContent}function q(n){return x.create(`<div class="lightbox-container">
-    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="./img/icons.svg#menu-close">
+    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="../img/icons.svg#menu-close">
     </use><svg></button>
     <div class="lightbox-img-wrapper">
     <picture class="lightbox-img" ${n.target.parentNode.innerHTML}</picture>
@@ -23,7 +23,7 @@
     <a class="lightbox-order-link" href="#order">
           Order
           <svg class="lightbox-order-icon" width="26" height="10">
-            <use href="./img/icons.svg#arrow"></use>
+            <use href="../img/icons.svg#arrow"></use>
           </svg>
         </a>
     </div>
