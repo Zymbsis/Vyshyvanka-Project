@@ -148,3 +148,4 @@
 //   }
 // });
 import * as ourCollection from '/our-collection';
+import * as someFiles from './some-folder/some-file';
