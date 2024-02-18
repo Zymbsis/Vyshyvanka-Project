@@ -41,7 +41,7 @@ function createLightboxInstance(e) {
     ])}
     </ul>
     <div class="lightbox-hand-made">
-    <img class="lightbox-hand-made-img" src="./img/tablet/Hero/star-tab-desk1x.png" alt="Star symbol" width="49" height="49">
+    <img class="lightbox-hand-made-img" src="../img/tablet/Hero/star-tab-desk1x.png" alt="Star symbol" width="49" height="49">
     <p class="lightbox-hand-made-text">all embroidery is made by hand</p></div></div>
 
     <div class="lightbox-desc-wrapper">
@@ -77,5 +77,4 @@ mainContainer.addEventListener('click', e => {
     return;
   }
   createLightboxInstance(e).show();
-  console.log(document.querySelector('.lightbox-size-list'));
 });
