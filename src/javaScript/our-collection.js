@@ -23,7 +23,7 @@ function lightboxTextContent(className, e) {
 function createLightboxInstance(e) {
   const instance = basicLightbox.create(
     `<div class="lightbox-container">
-    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="../img/icons.svg#menu-close">
+    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="/img/icons.svg#menu-close">
     </use><svg></button>
     <div class="lightbox-img-wrapper">
     <picture class="lightbox-img" ${e.target.parentNode.innerHTML}</picture>
@@ -59,7 +59,7 @@ function createLightboxInstance(e) {
     <a class="lightbox-order-link" href="#order">
           Order
           <svg class="lightbox-order-icon" width="26" height="10">
-            <use href="../img/icons.svg#arrow"></use>
+            <use href="/img/icons.svg#arrow"></use>
           </svg>
         </a>
     </div>
