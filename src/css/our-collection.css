@@ -560,9 +560,10 @@ screen and (min-device-pixel-ratio: 3) {
     color: #ecd979;
 }
 
-/* .lightbox-hand-made {
+.lightbox-hand-made {
     display: none;
-} */
+}
+
 .lightbox-desc-wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
