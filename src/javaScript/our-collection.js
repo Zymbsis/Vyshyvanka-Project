@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-
+import lightboxCloseIcon from '../img/icons.svg#menu-close';
+import lightboxOrderIcon from '../img/icons.svg#arrow';
 const mainContainer = document.querySelector('.collection-list');
 
 function markupLightboxSizeChart(arr) {
@@ -23,8 +24,7 @@ function lightboxTextContent(className, e) {
 function createLightboxInstance(e) {
   const instance = basicLightbox.create(
     `<div class="lightbox-container">
-    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href="/img/icons.svg#menu-close">
-    </use><svg></button>
+    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon">${lightboxCloseIcon}<svg></button>
     <div class="lightbox-img-wrapper">
     <picture class="lightbox-img" ${e.target.parentNode.innerHTML}</picture>
     <ul class="lightbox-size-list">
@@ -59,7 +59,7 @@ function createLightboxInstance(e) {
     <a class="lightbox-order-link" href="#order">
           Order
           <svg class="lightbox-order-icon" width="26" height="10">
-            <use href="/img/icons.svg#arrow"></use>
+            ${lightboxOrderIcon}
           </svg>
         </a>
     </div>
