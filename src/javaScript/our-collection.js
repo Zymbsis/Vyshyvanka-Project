@@ -2,6 +2,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import lightboxCloseIcon from '../img/icons.svg#menu-close';
 import lightboxOrderIcon from '../img/icons.svg#arrow';
+import lightboxStar from '../img/tablet/Hero/star-tab-desk1x.png';
 const mainContainer = document.querySelector('.collection-list');
 
 function markupLightboxSizeChart(arr) {
@@ -41,7 +42,7 @@ function createLightboxInstance(e) {
     ])}
     </ul>
     <div class="lightbox-hand-made">
-    <img class="lightbox-hand-made-img" src="../img/tablet/Hero/star-tab-desk1x.png" alt="Star symbol" width="49" height="49">
+    <img class="lightbox-hand-made-img" src="${lightboxStar}" alt="Star symbol" width="49" height="49">
     <p class="lightbox-hand-made-text">all embroidery is made by hand</p></div></div>
 
     <div class="lightbox-desc-wrapper">
