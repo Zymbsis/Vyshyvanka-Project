@@ -147,4 +147,4 @@
 //     closeLightbox();
 //   }
 // });
-// import * as ourCollection from './our-collection';
+import * as ourCollection from '/our-collection';
