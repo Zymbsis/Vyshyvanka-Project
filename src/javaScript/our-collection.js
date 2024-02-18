@@ -1,7 +1,8 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import lightboxCloseIcon from '../img/icons.svg#menu-close';
-import lightboxOrderIcon from '../img/icons.svg#arrow';
+// import lightboxCloseIcon from '../img/icons.svg#menu-close';
+// import lightboxOrderIcon from '../img/icons.svg#arrow';
+import lightboxIcons from '../img/icons.svg';
 import lightboxStar from '../img/tablet/Hero/star-tab-desk1x.png';
 const mainContainer = document.querySelector('.collection-list');
 
@@ -25,7 +26,7 @@ function lightboxTextContent(className, e) {
 function createLightboxInstance(e) {
   const instance = basicLightbox.create(
     `<div class="lightbox-container">
-    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href=${lightboxCloseIcon}>
+    <button class="lightbox-close-button" type="button"><svg width="26" height="26" class="lightbox-close-icon"><use href=${lightboxIcons}#menu-close>
     </use><svg></button>
     <div class="lightbox-img-wrapper">
     <picture class="lightbox-img" ${e.target.parentNode.innerHTML}</picture>
@@ -61,7 +62,7 @@ function createLightboxInstance(e) {
     <a class="lightbox-order-link" href="#order">
           Order
           <svg class="lightbox-order-icon" width="26" height="10">
-            <use href=${lightboxOrderIcon}></use>
+            <use href=${lightboxIcons}#arrow></use>
           </svg>
         </a>
     </div>
