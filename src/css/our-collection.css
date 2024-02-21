@@ -423,10 +423,13 @@ screen and (min-device-pixel-ratio: 3) {
 
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
+.basicLightbox {
+    overflow: scroll;
+}
+
 .lightbox-container {
     position: relative;
     width: 80vw;
-    height: 110vh;
     padding: 15px;
     display: flex;
     flex-direction: column;
