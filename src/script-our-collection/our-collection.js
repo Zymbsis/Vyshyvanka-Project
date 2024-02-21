@@ -19,6 +19,17 @@ function onClickCollectContainer(e) {
   lightboxInstance.show(i => {
     onShowLightbox(i, e);
   });
+  window.addEventListener('orientationchange', () => {
+    const basicLightbox = document.querySelector('.basicLightbox');
+    const container = document.querySelector('.lightbox-container');
+    console.log(window.innerHeight > container.offsetHeight);
+
+    if (window.innerHeight < container.offsetHeight) {
+      basicLightbox.classList.remove('basicLightbox-scroll');
+    } else {
+      basicLightbox.classList.add('basicLightbox-scroll');
+    }
+  });
 }
 
 function onShowLightbox(i, e) {
@@ -37,15 +48,7 @@ function onShowLightbox(i, e) {
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
   fillTheTag(lightboxRefs.desc, '.collection-desc', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
-  window.addEventListener('orientationchange', () => {
-    const container = i.element().querySelector('.lightbox-container');
 
-    if (window.innerHeight < container.offsetHeight) {
-      lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
-    } else {
-      lightboxRefs.basicLightbox.classList.remove('basicLightbox-scroll');
-    }
-  });
   if (window.innerHeight < lightboxRefs.container.offsetHeight) {
     lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
   } else {
