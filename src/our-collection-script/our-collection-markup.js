@@ -26,7 +26,7 @@ export const lightboxMarkup = `<div class="lightbox-container">
     <div class="lightbox-desc-wrapper">
     <h2 class="lightbox-desc-title"></h2>
     <p class="lightbox-desc-text"></p>
-    <p class="lightbox-desc-text">Crafted using only 100% pure organic materials (flax, cotton)</p>
+    <span class="lightbox-desc-text">Crafted using only 100% pure organic materials (flax, cotton)</span>
     <p class="lightbox-desc-price"></p>
     <a class="lightbox-order-link" href="#order">
     Order

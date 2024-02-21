@@ -20,8 +20,6 @@ function fillTheTag(tagForFill, originTagClassName, e) {
 }
 
 function onShowLightbox(i, e) {
-  const basicLightbox = document.querySelector('.basicLightbox');
-  const lightboxContainer = i.element().querySelector('.lightbox-container');
   const lightboxImg = i.element().querySelector('.lightbox-img');
   const lightboxTitle = i.element().querySelector('.lightbox-desc-title');
   const lightboxDesc = i.element().querySelector('.lightbox-desc-text');
@@ -50,15 +48,12 @@ mainContainer.addEventListener('click', e => {
   onShowLightbox(instance, e);
   instance.show(i => {
     const basicLightbox = document.querySelector('.basicLightbox');
-
     const lightboxContainer = i.element().querySelector('.lightbox-container');
-
+    console.log(lightboxContainer.offsetHeight);
     if (window.innerHeight < lightboxContainer.offsetHeight) {
-      basicLightbox.classList.add('basicLightbox1');
-      console.log('add');
+      basicLightbox.classList.add('basicLightbox-scroll');
     } else {
-      basicLightbox.classList.remove('basicLightbox1');
-      console.log('remove');
+      basicLightbox.classList.remove('basicLightbox-scroll');
     }
   });
 });
