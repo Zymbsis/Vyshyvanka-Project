@@ -147,4 +147,5 @@
 //     closeLightbox();
 //   }
 // });
-import * as ourCollection from './our-collection-script/our-collection';
+import * as header from './script-header/header';
+import * as ourCollection from './script-our-collection/our-collection';

@@ -1,0 +1,430 @@
+.basicLightbox-scroll {
+  overflow: scroll;
+  align-items: flex-start !important;
+}
+
+.lightbox-container {
+  position: relative;
+  width: 80vw;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1c2225;
+  background-image: url(../img/mobile/Collection/collection-elements-mob1x.png),
+    url(../img/tablet/Order/order-elements-tab1x.png);
+  background-size: 57px 150px, 81px 121px;
+  background-position: left 0 top 20px, right 0px bottom -30px;
+  background-repeat: no-repeat;
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 144dpi),
+(min-resolution: 2dppx) {
+  .lightbox-container {
+    background-image: url(../img/mobile/Collection/collection-elements-mob2x.png),
+      url(../img/tablet/Order/order-elements-tab2x.png);
+  }
+}
+
+@media (min-device-pixel-ratio: 3),
+(min-resolution: 216dpi),
+(min-resolution: 3dppx) {
+  .lightbox-container {
+    background-image: url(../img/mobile/Collection/collection-elements-mob3x.png),
+      url(../img/tablet/Order/order-elements-tab3x.png);
+  }
+}
+
+.lightbox-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  transition: transform 300ms ease-in-out;
+}
+
+.lightbox-close-button:hover {
+  transform: scale(0.9);
+}
+
+.lightbox-close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  stroke: #ecd979;
+}
+
+.lightbox-img-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.lightbox-img {
+  width: 220px;
+}
+
+.lightbox-img img {
+  margin-bottom: 0;
+}
+
+.lightbox-size-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 3px;
+}
+
+.lightbox-size-item {
+  width: 24px;
+  height: 24px;
+  font-size: 8px;
+  font-weight: 500;
+  background-color: #ecd979;
+  border-radius: 50%;
+  color: #1c2225;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out, border 300ms ease-in-out,
+    background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.lightbox-size-text {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-size-item:hover {
+  transform: scale(1.1);
+  border: 1px solid #ecd979;
+  background-color: #1c2225;
+  color: #ecd979;
+}
+
+.lightbox-hand-made {
+  display: none;
+}
+
+.lightbox-desc-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lightbox-desc-title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lightbox-desc-text {
+  margin-bottom: 10px;
+  color: #fcf9f966;
+  font-size: 14px;
+  line-height: normal;
+}
+
+.lightbox-desc-text + span {
+  display: inline-flex;
+}
+
+.lightbox-desc-price {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ecd979;
+}
+
+.lightbox-order-link {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  background-color: #1c2225;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: normal;
+  transition: border-color 300ms ease-in-out;
+}
+
+.lightbox-order-link:hover {
+  border-color: #ecd979;
+}
+
+.lightbox-order-icon {
+  fill: #ecd979;
+  transform: rotate(-30deg);
+}
+
+.lightbox-order-link:hover .lightbox-order-icon {
+  animation: 1500ms linear running rotation-trick;
+}
+
+@keyframes rotation-trick {
+  0% {
+    transform: rotate(330deg);
+  }
+
+  33% {
+    transform: rotate(220deg);
+  }
+
+  66% {
+    transform: rotate(110deg);
+  }
+
+  75% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(30px);
+  }
+}
+
+.scrollBan {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 600px) {
+  .lightbox-hand-made {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .lightbox-hand-made-img {
+    animation: 6s linear running infinite rotation;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .lightbox-hand-made-text {
+    width: 115px;
+    color: rgba(252, 249, 249, 0.4);
+    text-align: center;
+    line-height: normal;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .lightbox-container {
+    width: 90vw;
+    padding: 20px;
+    background-image: url(../img/tablet/Collection/collection-elements-tab1x.png),
+      url(../img/tablet/Order/order-elements-tab1x.png);
+    background-size: 114px 300px, 131px 196px;
+    background-position: left -35px top 35px, right 0px bottom -30px;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 144dpi),
+  (min-resolution: 2dppx) {
+    .lightbox-container {
+      background-image: url(../img/tablet/Collection/collection-elements-tab2x.png),
+        url(../img/tablet/Order/order-elements-tab2x.png);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+  (min-resolution: 216dpi),
+  (min-resolution: 3dppx) {
+    .lightbox-container {
+      background-image: url(../img/tablet/Collection/collection-elements-tab3x.png),
+        url(../img/tablet/Order/order-elements-tab3x.png);
+    }
+  }
+
+  .lightbox-close-button {
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .lightbox-close-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lightbox-img-wrapper {
+    flex-direction: column;
+  }
+
+  .lightbox-img {
+    width: 320px;
+  }
+
+  .lightbox-size-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .lightbox-size-item {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .lightbox-desc-wrapper {
+    padding-top: 20px;
+    padding-right: 25px;
+  }
+
+  .lightbox-desc-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .lightbox-desc-text {
+    margin-bottom: 15px;
+  }
+
+  .lightbox-desc-text + span {
+    margin-bottom: 50px;
+  }
+
+  .lightbox-desc-price {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  .lightbox-order-link {
+    font-size: 16px;
+    padding: 14px 39px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .lightbox-container {
+    width: 80vw;
+    height: 794px;
+    padding: 35px;
+    background-image: url(../img/desktop/Collection/collection-elements-desk1x.png),
+      url(../img/desktop/Order/order-elements-desk1x.png);
+    background-size: 169px 300px, 200px 300px;
+    background-position: left -10px top 75px, right -30px bottom 0px;
+    gap: 20px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+  (min-resolution: 144dpi),
+  (min-resolution: 2dppx) {
+    .lightbox-container {
+      background-image: url(../img/desktop/Collection/collection-elements-desk2x.png),
+        url(../img/desktop/Order/order-elements-desk2x.png);
+    }
+  }
+
+  @media (min-device-pixel-ratio: 3),
+  (min-resolution: 216dpi),
+  (min-resolution: 3dppx) {
+    .lightbox-container {
+      background-image: url(../img/desktop/Collection/collection-elements-desk3x.png),
+        url(../img/desktop/Order/order-elements-desk3x.png);
+    }
+  }
+
+  .lightbox-close-button {
+    top: 25px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .lightbox-close-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .lightbox-img {
+    width: 450px;
+  }
+
+  .lightbox-img img {
+    width: 100%;
+  }
+
+  .lightbox-size-list {
+    gap: 10px;
+  }
+
+  .lightbox-size-item {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .lightbox-desc-wrapper {
+    padding-top: 25px;
+    padding-right: 30px;
+  }
+
+  .lightbox-desc-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .lightbox-desc-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .lightbox-desc-text + span {
+    margin-bottom: 65px;
+  }
+
+  .lightbox-desc-price {
+    margin-bottom: 35px;
+    font-size: 26px;
+  }
+
+  .lightbox-order-link {
+    font-size: 20px;
+    padding: 16px 45px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .lightbox-container {
+    width: 65vw;
+    gap: 30px;
+  }
+
+  .lightbox-img-wrapper {
+    gap: 30px;
+  }
+}
