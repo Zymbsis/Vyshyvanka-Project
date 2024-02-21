@@ -10,8 +10,6 @@ const instance = basicLightbox.create(lightboxMarkup, {
   },
 });
 
-console.log(instance);
-
 function fillTheTag(tagForFill, originTagClassName, e) {
   tagForFill.innerHTML =
     e.target.parentElement.parentElement.querySelector(
