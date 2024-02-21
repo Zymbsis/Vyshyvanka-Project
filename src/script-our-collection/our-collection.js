@@ -19,15 +19,13 @@ function onClickCollectContainer(e) {
   lightboxInstance.show(i => {
     onShowLightbox(i, e);
   });
-  window.addEventListener('orientationchange', () => {
+  window.addEventListener('resize', () => {
     const basicLightbox = document.querySelector('.basicLightbox');
     const container = document.querySelector('.lightbox-container');
-    console.log(window.innerHeight > container.offsetHeight);
-
     if (window.innerHeight < container.offsetHeight) {
-      basicLightbox.classList.remove('basicLightbox-scroll');
-    } else {
       basicLightbox.classList.add('basicLightbox-scroll');
+    } else {
+      basicLightbox.classList.remove('basicLightbox-scroll');
     }
   });
 }
