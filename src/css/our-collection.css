@@ -93,7 +93,6 @@
     .collection-item {
         width: calc((100% - 20px) / 2);
         transition: scale 300ms ease-in-out;
-        cursor: pointer;
     }
 
     .collection-item:hover,
