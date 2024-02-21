@@ -45,11 +45,12 @@ mainContainer.addEventListener('click', e => {
     return;
   }
   document.body.classList.add('scrollBan');
+
   onShowLightbox(instance, e);
   instance.show(i => {
     const basicLightbox = document.querySelector('.basicLightbox');
     const lightboxContainer = i.element().querySelector('.lightbox-container');
-    console.log(lightboxContainer.offsetHeight);
+
     if (window.innerHeight < lightboxContainer.offsetHeight) {
       basicLightbox.classList.add('basicLightbox-scroll');
     } else {
