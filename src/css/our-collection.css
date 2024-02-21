@@ -430,6 +430,7 @@ screen and (min-device-pixel-ratio: 3) {
 .lightbox-container {
     position: relative;
     width: 80vw;
+    height: 120vh;
     padding: 15px;
     display: flex;
     flex-direction: column;
