@@ -37,7 +37,13 @@ function onShowLightbox(i, e) {
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
   fillTheTag(lightboxRefs.desc, '.collection-desc', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
-
+  window.addEventListener('orientationchange', e => {
+    if (window.innerHeight < lightboxRefs.container.offsetHeight) {
+      lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
+    } else {
+      lightboxRefs.basicLightbox.classList.remove('basicLightbox-scroll');
+    }
+  });
   if (window.innerHeight < lightboxRefs.container.offsetHeight) {
     lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
   } else {
