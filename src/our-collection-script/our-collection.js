@@ -20,6 +20,8 @@ function fillTheTag(tagForFill, originTagClassName, e) {
 }
 
 function onShowLightbox(i, e) {
+  const basicLightbox = document.querySelector('.basicLightbox');
+  const lightboxContainer = i.element().querySelector('.lightbox-container');
   const lightboxImg = i.element().querySelector('.lightbox-img');
   const lightboxTitle = i.element().querySelector('.lightbox-desc-title');
   const lightboxDesc = i.element().querySelector('.lightbox-desc-text');
@@ -46,7 +48,19 @@ mainContainer.addEventListener('click', e => {
   }
   document.body.classList.add('scrollBan');
   onShowLightbox(instance, e);
-  instance.show();
+  instance.show(i => {
+    const basicLightbox = document.querySelector('.basicLightbox');
+
+    const lightboxContainer = i.element().querySelector('.lightbox-container');
+
+    if (window.innerHeight < lightboxContainer.offsetHeight) {
+      basicLightbox.classList.add('basicLightbox1');
+      console.log('add');
+    } else {
+      basicLightbox.classList.remove('basicLightbox1');
+      console.log('remove');
+    }
+  });
 });
 
 /******************************************************/

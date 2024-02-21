@@ -423,8 +423,9 @@ screen and (min-device-pixel-ratio: 3) {
 
 /* ******************************************************************************************** */
 /* ******************************************************************************************** */
-.basicLightbox {
+.basicLightbox1 {
     overflow: scroll;
+    align-items: flex-start !important;
 }
 
 .lightbox-container {
