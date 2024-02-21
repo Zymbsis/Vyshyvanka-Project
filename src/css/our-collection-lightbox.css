@@ -71,6 +71,7 @@
 
 .lightbox-img img {
   margin-bottom: 0;
+  cursor: default;
 }
 
 .lightbox-size-list {
