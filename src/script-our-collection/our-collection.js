@@ -37,8 +37,10 @@ function onShowLightbox(i, e) {
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
   fillTheTag(lightboxRefs.desc, '.collection-desc', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
-  window.addEventListener('orientationchange', e => {
-    if (window.innerHeight < lightboxRefs.container.offsetHeight) {
+  window.addEventListener('orientationchange', () => {
+    const container = i.element().querySelector('.lightbox-container');
+
+    if (window.innerHeight < container.offsetHeight) {
       lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
     } else {
       lightboxRefs.basicLightbox.classList.remove('basicLightbox-scroll');
