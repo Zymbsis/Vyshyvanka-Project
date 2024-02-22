@@ -44,7 +44,7 @@ function onShowLightbox(i, e) {
 
   lightboxRefs.img.innerHTML = e.target.parentElement.innerHTML;
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
-  fillTheTag(lightboxRefs.desc, '.collection-desc', e);
+  fillTheTag(lightboxRefs.desc, '.visually-hidden', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
 
   if (window.innerHeight < lightboxRefs.container.offsetHeight) {
