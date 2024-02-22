@@ -47,6 +47,8 @@ function onShowLightbox(i, e) {
   } else if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
     lightboxRefs.img.innerHTML =
       e.target.parentElement.firstElementChild.innerHTML;
+  } else if (e.target.nodeName === 'LI') {
+    lightboxRefs.img.innerHTML = e.target.firstElementChild.innerHTML;
   }
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
   fillTheTag(lightboxRefs.desc, '.visually-hidden', e);
@@ -77,5 +79,8 @@ function fillTheTag(tagForFill, originTagClassName, e) {
   } else if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
     tagForFill.innerHTML =
       e.target.parentElement.querySelector(originTagClassName).textContent;
+  } else if (e.target.nodeName === 'LI') {
+    tagForFill.innerHTML =
+      e.target.querySelector(originTagClassName).textContent;
   }
 }
