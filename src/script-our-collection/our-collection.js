@@ -12,9 +12,10 @@ const lightboxInstance = basicLightbox.create(lightboxMarkup, {
 collectContainer.addEventListener('click', onClickCollectContainer);
 
 function onClickCollectContainer(e) {
-  if (e.target.nodeName !== 'IMG') {
+  if (e.target === e.currentTarget) {
     return;
   }
+
   document.body.classList.add('scrollBan');
   lightboxInstance.show(i => {
     onShowLightbox(i, e);
@@ -41,8 +42,12 @@ function onShowLightbox(i, e) {
     closeBtn: i.element().querySelector('.lightbox-close-button'),
     orderLink: i.element().querySelector('.lightbox-order-link'),
   };
-
-  lightboxRefs.img.innerHTML = e.target.parentElement.innerHTML;
+  if (e.target.nodeName === 'IMG') {
+    lightboxRefs.img.innerHTML = e.target.parentElement.innerHTML;
+  } else if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
+    lightboxRefs.img.innerHTML =
+      e.target.parentElement.firstElementChild.innerHTML;
+  }
   fillTheTag(lightboxRefs.title, '.collection-subtitle', e);
   fillTheTag(lightboxRefs.desc, '.visually-hidden', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
@@ -64,8 +69,13 @@ function onShowLightbox(i, e) {
 }
 
 function fillTheTag(tagForFill, originTagClassName, e) {
-  tagForFill.innerHTML =
-    e.target.parentElement.parentElement.querySelector(
-      originTagClassName
-    ).textContent;
+  if (e.target.nodeName === 'IMG') {
+    tagForFill.innerHTML =
+      e.target.parentElement.parentElement.querySelector(
+        originTagClassName
+      ).textContent;
+  } else if (e.target.nodeName === 'H3' || e.target.nodeName === 'P') {
+    tagForFill.innerHTML =
+      e.target.parentElement.querySelector(originTagClassName).textContent;
+  }
 }
