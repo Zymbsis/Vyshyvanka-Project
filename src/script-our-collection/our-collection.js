@@ -6,6 +6,7 @@ const collectContainer = document.querySelector('.collection-list');
 const lightboxInstance = basicLightbox.create(lightboxMarkup, {
   onClose: () => {
     document.body.classList.remove('scrollBan');
+    window.removeEventListener('resize', resizeWindow);
   },
 });
 
@@ -20,18 +21,21 @@ function onClickCollectContainer(e) {
   lightboxInstance.show(i => {
     onShowLightbox(i, e);
   });
-  window.addEventListener('resize', () => {
-    const basicLightbox = document.querySelector('.basicLightbox');
-    const container = document.querySelector('.lightbox-container');
-    if (window.innerHeight < container.offsetHeight) {
-      basicLightbox.classList.add('basicLightbox-scroll');
-    } else {
-      basicLightbox.classList.remove('basicLightbox-scroll');
-    }
-  });
+}
+
+function resizeWindow() {
+  const basicLightbox = document.querySelector('.basicLightbox');
+  const container = document.querySelector('.lightbox-container');
+  if (window.innerHeight < container.offsetHeight) {
+    basicLightbox.classList.add('basicLightbox-scroll');
+  } else {
+    basicLightbox.classList.remove('basicLightbox-scroll');
+  }
 }
 
 function onShowLightbox(i, e) {
+  resizeWindow();
+  window.addEventListener('resize', resizeWindow);
   const lightboxRefs = {
     basicLightbox: document.querySelector('.basicLightbox'),
     container: i.element().querySelector('.lightbox-container'),
@@ -54,19 +58,15 @@ function onShowLightbox(i, e) {
   fillTheTag(lightboxRefs.desc, '.visually-hidden', e);
   fillTheTag(lightboxRefs.price, '.collection-text', e);
 
-  if (window.innerHeight < lightboxRefs.container.offsetHeight) {
-    lightboxRefs.basicLightbox.classList.add('basicLightbox-scroll');
-  } else {
-    lightboxRefs.basicLightbox.classList.remove('basicLightbox-scroll');
-  }
-
   lightboxRefs.closeBtn.addEventListener('click', () => {
     i.close();
     document.body.classList.remove('scrollBan');
+    window.removeEventListener('resize', resizeWindow);
   });
   lightboxRefs.orderLink.addEventListener('click', () => {
     i.close();
     document.body.classList.remove('scrollBan');
+    window.removeEventListener('resize', resizeWindow);
   });
 }
 
